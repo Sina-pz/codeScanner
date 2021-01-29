@@ -1,0 +1,17 @@
+<zxing-scanner [formats]="allowedFormats"
+[enable]="scannerEnabled"
+
+[torch]="torch"
+(torchCompatible)="onTorchCompatible($event)"
+(camerasFound)="camerasFoundHandler($event)"
+(camerasNotFound)="camerasNotFoundHandler($event)"
+(scanSuccess)="scanSuccessHandler($event)"
+(scanError)="scanErrorHandler($event)"
+
+>
+</zxing-scanner>
+
+<!-- [(device)]="desiredDevice"
+    (scanFailure)="scanFailureHandler($event)"
+(scanComplete)="scanCompleteHandler($event)" -->
+
