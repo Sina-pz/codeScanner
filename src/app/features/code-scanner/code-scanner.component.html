@@ -1,17 +1,31 @@
-<zxing-scanner [formats]="allowedFormats"
+<zxing-scanner #scanner [formats]="allowedFormats"
 [enable]="scannerEnabled"
 
-[torch]="torch"
-(torchCompatible)="onTorchCompatible($event)"
 (camerasFound)="camerasFoundHandler($event)"
 (camerasNotFound)="camerasNotFoundHandler($event)"
+(scanComplete)="scanCompleteHandler($event)" 
 (scanSuccess)="scanSuccessHandler($event)"
 (scanError)="scanErrorHandler($event)"
+
+
 
 >
 </zxing-scanner>
 
+<div id="sourceSelectPanel" style="display:none">
+    <label for="sourceSelect">Change video source:</label>
+    <select id="sourceSelect" style="max-width:400px">
+    </select>
+  </div>
+
 <!-- [(device)]="desiredDevice"
     (scanFailure)="scanFailureHandler($event)"
-(scanComplete)="scanCompleteHandler($event)" -->
+(scanComplete)="scanCompleteHandler($event)" 
+
+[torch]="torch"
+(torchCompatible)="onTorchCompatible($event)"
+(scanComplete)="''"
+(permissionResponse)="''"
+(scanFailure)="''"
+-->
 
